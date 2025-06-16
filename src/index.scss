@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: NunitoSans, sans-serif;
+}
+
+.boldText{
+  font-weight: 800;
+}
+
+.button {
+  width: 165px;
+  height: 50px;
+  background-size: 165px;
+ 
+  border: none;
+  
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 24px;
+  letter-spacing: 1px;
+  text-align: center;
+
+  &__orange{
+    background-image: url(/public/Base.jpg);
+    color: #fff;
+  }
+
+  &__white{
+    background: white;
+    color: black;
+    margin-left: 20px;
+  }
+}

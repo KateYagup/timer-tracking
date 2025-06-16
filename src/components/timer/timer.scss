@@ -1,0 +1,58 @@
+.track {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 40px;
+
+  &__common {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    height: 50px;
+  }
+  &__name {
+    margin-right: 59px;
+  }
+
+  &__name-text {
+    font-family: NunitoSans;
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0px;
+    color: #5586f2;
+  }
+
+  &__time {
+    background: #e7e8ea;
+    width: 117px;
+    border-radius: 6px;
+    border: 1px;
+    margin-right: 42px;
+  }
+
+  &__active{
+    background-color: #FF487626;
+  }
+
+  &__passive{
+    background: #e7e8ea;
+  }
+
+  &__time-text {
+    font-family: NunitoSans;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 100%;
+    letter-spacing: 0px;
+    color: #676c75;
+  }
+
+  &__button{
+    width: 59px;
+    height: 50px;
+    margin-right: 20px;
+    border: none;
+    background-color: none;
+  }
+}

@@ -1,0 +1,80 @@
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  align-items: center;
+
+  &__appStarter {
+    font-family: NunitoSans;
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 25px;
+    letter-spacing: 0px;
+  }
+
+  &__author {
+    font-family: NunitoSans;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 100%;
+    letter-spacing: 0px;
+  }
+
+  &__icons {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__icon {
+    width: 40px;
+    height: 40px;
+    top: 1724px;
+    left: 1187px;
+    border-width: 1px;
+    border: 1px solid #e7e8ea;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.left {
+  border-top-left-radius: 20%;
+  border-bottom-left-radius: 20%;
+}
+
+.right {
+  border-top-right-radius: 20%;
+  border-bottom-right-radius: 20%;
+}
+
+.year {
+  font-family: NunitoSans;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 100%;
+  letter-spacing: 0px;
+  text-align: center;
+  color: #999ea8;
+}
+
+.created {
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 100%;
+  letter-spacing: 0px;
+  color: #999ea8;
+}
+
+.sergey {
+font-weight: 700;
+font-size: 11px;
+line-height: 100%;
+letter-spacing: 0px;
+color: #282B31;
+}
+
+.heart {
+  margin: 0 2px;
+}
