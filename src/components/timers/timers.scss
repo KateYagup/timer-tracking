@@ -1,5 +1,23 @@
 .track-zone {
-  width: 570px;
+  // width: 570px;
+  display: flex;
+  justify-content: center;
+  // flex-direction: column;
+  // align-items: center;
+  &__width{
+    width: 770px;
+  }
+}
+
+.timers-group{
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.createTimers{
+  display: flex;
+  justify-content: center;
 }
 
 .inputName {
@@ -13,20 +31,6 @@
   margin-right: 20px;
   padding-left: 20px;
 }
-
-// .buttonCreate {
-//   width: 165px;
-//   height: 50px;
-//   background-size: 165px;
-//   background-image: url(/public/Base.jpg);
-//   border: none;
-//   color: #fff;
-//   font-weight: 700;
-//   font-size: 17px;
-//   line-height: 24px;
-//   letter-spacing: 1px;
-//   text-align: center;
-// }
 
 .separateLine {
   width: 100%;

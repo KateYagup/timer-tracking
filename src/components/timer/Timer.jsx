@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import './timer.scss';
 import moment from 'moment';
 
@@ -38,9 +38,13 @@ const Timer = ({
     const secondsString = seconds > 10 ? seconds : `0${seconds}`;
 
     setTimeFormated(`${hoursString} : ${minutesString} : ${secondsString}`);
-    return () => {
-      handleStartTime(id, currentTime);
-    };
+    // return () => {
+    //   handleStartTime(id, currentTime);
+    // };
+  }, [currentTime]);
+
+  useMemo(() => {
+    handleStartTime(id, currentTime);
   }, [currentTime]);
 
   return (
@@ -48,25 +52,27 @@ const Timer = ({
       <div className="track__name track__common">
         <p className="track__name-text">{timerName}</p>
       </div>
-      <div
-        className={
-          pauseTimer
-            ? 'track__time track__common track__active'
-            : 'track__time track__common track__passive'
-        }
-      >
-        <p className="track__time-text">{timeFormated}</p>
+      <div className="track__control">
+        <div
+          className={
+            pauseTimer
+              ? 'track__time track__common track__active'
+              : 'track__time track__common track__passive'
+          }
+        >
+          <p className="track__time-text">{timeFormated}</p>
+        </div>
+        <button className="track__button" onClick={() => handleToggle(id)}>
+          {pauseTimer ? (
+            <img src="src/components/timer/playButton.png" alt="" />
+          ) : (
+            <img src="src/components/timer/pauseButton.png" alt="" />
+          )}
+        </button>
+        <button className="track__button" onClick={() => removeTimer(id)}>
+          <img src="src/components/timer/deleteButton.png" alt="" />
+        </button>
       </div>
-      <button className="track__button" onClick={() => handleToggle(id)}>
-        {pauseTimer ? (
-          <img src="src/components/timer/playButton.png" alt="" />
-        ) : (
-          <img src="src/components/timer/pauseButton.png" alt="" />
-        )}
-      </button>
-      <button className="track__button" onClick={() => removeTimer(id)}>
-        <img src="src/components/timer/deleteButton.png" alt="" />
-      </button>
     </div>
   );
 };

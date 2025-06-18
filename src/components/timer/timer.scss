@@ -1,8 +1,9 @@
 .track {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   text-align: center;
   margin-bottom: 40px;
+  width: 464px;
 
   &__common {
     display: flex;
@@ -12,6 +13,8 @@
   }
   &__name {
     margin-right: 59px;
+    width: 200px;
+    justify-content: left;
   }
 
   &__name-text {
@@ -21,6 +24,9 @@
     line-height: 100%;
     letter-spacing: 0px;
     color: #5586f2;
+    text-align: left;
+    white-space: nowrap;
+    width: 65px;
   }
 
   &__time {
@@ -31,11 +37,11 @@
     margin-right: 42px;
   }
 
-  &__active{
-    background-color: #FF487626;
+  &__active {
+    background-color: #ff487626;
   }
 
-  &__passive{
+  &__passive {
     background: #e7e8ea;
   }
 
@@ -48,11 +54,15 @@
     color: #676c75;
   }
 
-  &__button{
+  &__button {
     width: 59px;
     height: 50px;
     margin-right: 20px;
     border: none;
     background-color: none;
+  }
+
+  &__control {
+    display: flex;
   }
 }

@@ -11,8 +11,8 @@ const HeaderTablet = () => {
           <a className="navPanel__right-menu">Video Tour</a>
           <a className="navPanel__right-menu">Reviews</a>
           <a className="navPanel__right-menu">Pricing</a>
+          <button className="button button__white">GET IT FREE</button>
         </div>
-        <button className="button button__white">GET IT FREE</button>
       </div>
       <div className="tablet">
         <div className="tablet__logo">

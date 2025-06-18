@@ -74,40 +74,42 @@ const Timers = () => {
 
   return (
     <div className="track-zone">
-      <div className="whyUse">
-        <p className="whyUse__header">
-          <span className="whyUse__header-bold">Why</span> do we use it?
-        </p>
-        <p className="whyUse__text">
-          This sounded nonsense to Alice, so she said nothing, but set off at once toward the Red
-          Queen. To her surprise, she lost sight of her in a moment.
-        </p>
-      </div>
-      <div className="createTimers">
-        <input
-          className="inputName"
-          type="text"
-          placeholder="Timer name"
-          value={timerInput}
-          onChange={e => setTimerInput(e.target.value)}
-          onKeyDown={handleKeyPress}
-        />
-        <button className="button button__orange" onClick={createNewTimer}>
-          Create Timer
-        </button>
-      </div>
-      <div className="separateLine"></div>
-      <ul>
-        {timers.map(timer => (
-          <Timer
-            key={timer.id}
-            {...timer}
-            removeTimer={removeTimer}
-            handleToggle={handleToggle}
-            handleStartTime={handleStartTime}
+      <div className="track-zone__width">
+        <div className="whyUse">
+          <p className="whyUse__header">
+            <span className="whyUse__header-bold">Why</span> do we use it?
+          </p>
+          <p className="whyUse__text">
+            This sounded nonsense to Alice, so she said nothing, but set off at once toward the Red
+            Queen. To her surprise, she lost sight of her in a moment.
+          </p>
+        </div>
+        <div className="createTimers">
+          <input
+            className="inputName"
+            type="text"
+            placeholder="Timer name"
+            value={timerInput}
+            onChange={e => setTimerInput(e.target.value)}
+            onKeyDown={handleKeyPress}
           />
-        ))}
-      </ul>
+          <button className="button button__orange" onClick={createNewTimer}>
+            Create Timer
+          </button>
+        </div>
+        <div className="separateLine"></div>
+        <div className="timers-group">
+          {timers.map(timer => (
+            <Timer
+              key={timer.id}
+              {...timer}
+              removeTimer={removeTimer}
+              handleToggle={handleToggle}
+              handleStartTime={handleStartTime}
+            />
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
