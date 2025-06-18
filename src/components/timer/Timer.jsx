@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import './timer.scss';
-import moment from 'moment';
 
 const Timer = ({
   id,
@@ -38,9 +37,6 @@ const Timer = ({
     const secondsString = seconds > 10 ? seconds : `0${seconds}`;
 
     setTimeFormated(`${hoursString} : ${minutesString} : ${secondsString}`);
-    // return () => {
-    //   handleStartTime(id, currentTime);
-    // };
   }, [currentTime]);
 
   useMemo(() => {
@@ -64,13 +60,13 @@ const Timer = ({
         </div>
         <button className="track__button" onClick={() => handleToggle(id)}>
           {pauseTimer ? (
-            <img src="src/components/timer/playButton.png" alt="" />
+            <img src="/public/control_buttons/playButton.png" alt="" />
           ) : (
-            <img src="src/components/timer/pauseButton.png" alt="" />
+            <img src="/public/control_buttons/pauseButton.png" alt="" />
           )}
         </button>
         <button className="track__button" onClick={() => removeTimer(id)}>
-          <img src="src/components/timer/deleteButton.png" alt="" />
+          <img src="/public/control_buttons/deleteButton.png" alt="" />
         </button>
       </div>
     </div>

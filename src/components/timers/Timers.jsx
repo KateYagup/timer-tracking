@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Timer from '../timer/Timer';
 import './timers.scss';
-// import buttonImage from './images/Base.jpg';
 
 const Timers = () => {
   const [timers, setTimers] = useState([]);
@@ -12,7 +11,6 @@ const Timers = () => {
     const objTimers = localStorage.getItem('timers');
     setTimers(JSON.parse(objTimers));
     setNumerOfTimer(localStorage.getItem('numberOfTimer'));
-
   }, []);
 
   useEffect(() => {
@@ -23,27 +21,26 @@ const Timers = () => {
   const createNewTimer = e => {
     let newTimer;
     if (timerInput) {
-       newTimer = {
+      newTimer = {
         id: Math.random().toString(36).substr(2, 9),
         timerName: timerInput,
         startTime: 0,
         endTime: 0,
         pauseTimer: false,
       };
-      
-    } else{
-        newTimer = {
-          id: Math.random().toString(36).substr(2, 9),
-          timerName: `Timer name ${numberOfTimer}`,
-          startTime: 0,
-          endTime: 0,
-          pauseTimer: false,
-        };
-        setNumerOfTimer(Number(numberOfTimer) + 1);
+    } else {
+      newTimer = {
+        id: Math.random().toString(36).substr(2, 9),
+        timerName: `Timer name ${numberOfTimer}`,
+        startTime: 0,
+        endTime: 0,
+        pauseTimer: false,
+      };
+      setNumerOfTimer(Number(numberOfTimer) + 1);
     }
 
     setTimers([...timers, newTimer]);
-      setTimerInput('');
+    setTimerInput('');
   };
 
   const handleKeyPress = e => {
@@ -66,9 +63,7 @@ const Timers = () => {
 
   const handleStartTime = (id, newTime) => {
     setTimers([
-      ...timers.map(timer =>
-        id === timer.id ? { ...timer, startTime: newTime } : { ...timer },
-      ),
+      ...timers.map(timer => (id === timer.id ? { ...timer, startTime: newTime } : { ...timer })),
     ]);
   };
 

@@ -4,14 +4,9 @@
 
 body {
   font-family: NunitoSans, sans-serif;
-  // display: flex;
-  // justify-content: center;
-  // max-width: auto;
-  // height: auto;
-
 }
 
-.boldText{
+.boldText {
   font-weight: 800;
 }
 
@@ -29,51 +24,46 @@ body {
   border-radius: 7px;
   white-space: nowrap;
 
-  &__orange{
+  &__orange {
     background-image: url(/public/Base.jpg);
     color: #fff;
   }
 
-  &__white{
+  &__white {
     background: white;
     color: black;
     margin-left: 20px;
   }
 }
 
-
 .square {
   max-width: auto;
   height: auto;
- /* width: 100px;
- height: 100px; */
- background: blue;
- border:  1px solid black;
- display: flex;
- flex-direction: row;
- justify-content: space-around;
- /* z-index: 0; */
+  background: blue;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
-.inner_square{
- width: 100px;
- height: 100px;
- background: aqua;
- /* z-index: 10; */
- margin: 10px;
+.inner_square {
+  width: 100px;
+  height: 100px;
+  background: aqua;
+  margin: 10px;
 }
 
 .outer {
- max-width: auto;
+  max-width: auto;
 }
 
-.inner_square{
- width: 100px;
- height: 100px;
- background: aqua;
- margin: 10px;
+.inner_square {
+  width: 100px;
+  height: 100px;
+  background: aqua;
+  margin: 10px;
 }
 
 .outer {
- max-width: auto;
+  max-width: auto;
 }
