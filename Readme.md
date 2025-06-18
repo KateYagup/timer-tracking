@@ -1,6 +1,6 @@
 # Project Employees-App
 
-### [Site link](https://employees-yagup.netlify.app/)
+### [Site link](https://yagup-timer-track.netlify.app/)
 
 Devices support
 - [desktop]
@@ -14,8 +14,6 @@ Devices support
 - [JavaScript](https://developer.mosilla.org/en-US/docs/Web/JavaScript)
 - [React](https://reactjs.org/)
 - [Moment](https://momentjs.com/)
-- [Redux Toolkit](https://redux-toolkit.js.org/)
-- [React Router](https://reactrouter.com/)
 
 ### Author
 
