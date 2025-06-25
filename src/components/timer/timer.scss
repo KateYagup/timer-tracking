@@ -3,7 +3,7 @@
   justify-content: space-around;
   text-align: center;
   margin-bottom: 40px;
-  width: 464px;
+  width: 500px;
 
   &__common {
     display: flex;
@@ -12,9 +12,13 @@
     height: 50px;
   }
   &__name {
+    display: inline-block;
     margin-right: 59px;
-    width: 200px;
-    justify-content: left;
+    display: inline-block;
+    width: 400px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   &__name-text {
@@ -25,8 +29,7 @@
     letter-spacing: 0px;
     color: #5586f2;
     text-align: left;
-    white-space: nowrap;
-    width: 65px;
+    // white-space: nowrap;
   }
 
   &__time {

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Timer from '../timer/Timer';
 import './timers.scss';
+import moment from 'moment';
+import { startTransition } from 'react';
 
 const Timers = () => {
   const [timers, setTimers] = useState([]);
@@ -26,15 +28,15 @@ const Timers = () => {
         timerName: timerInput,
         startTime: 0,
         endTime: 0,
-        pauseTimer: false,
+        pauseTimer: true,
       };
     } else {
       newTimer = {
         id: Math.random().toString(36).substr(2, 9),
+        endTime: 0,
         timerName: `Timer name ${numberOfTimer}`,
         startTime: 0,
-        endTime: 0,
-        pauseTimer: false,
+        pauseTimer: true,
       };
       setNumerOfTimer(Number(numberOfTimer) + 1);
     }
@@ -53,19 +55,61 @@ const Timers = () => {
     setTimers([...timers.filter(timers => timers.id !== id)]);
   };
 
+  const handleEndTime = id => {
+    console.log('Выполнилась запись времени handleEndTime');
+    setTimers([
+      ...timers.map(timer =>
+        id === timer.id ? { ...timer, 
+           endTime: moment() } : { ...timer },
+      ),
+    ]);
+  }
+  const handleNewStartTime = id => {
+    console.log('Выполняется прибавка прошедшего времени handleNewStartTime ' + id);
+    setTimers([
+      ...timers.map(timer =>
+         id === timer.id 
+          ? { ...timer, startTime: timer.startTime + moment().diff(moment(timer.endTime, 'seconds')) } 
+          : { ...timer },
+      )
+    ]);
+    // setTimers([
+    //   ...timers.map(timer =>
+    //     id === timer.id ? { ...timer, startTime: 10 } : { ...timer },
+    //   ),
+    // ]);
+  };
+
   const handleToggle = id => {
     setTimers([
       ...timers.map(timer =>
-        id === timer.id ? { ...timer, pauseTimer: !timer.pauseTimer } : { ...timer },
+        id === timer.id 
+        ? { ...timer, 
+          pauseTimer: !timer.pauseTimer, 
+           } 
+           : { ...timer },
       ),
     ]);
   };
+
+ 
 
   const handleStartTime = (id, newTime) => {
     setTimers([
       ...timers.map(timer => (id === timer.id ? { ...timer, startTime: newTime } : { ...timer })),
     ]);
   };
+
+  const handleCurrentTime = (id, currentTime, offTime) => {
+    setTimers([
+      ...timers.map(timer => (id === timer.id 
+        ? 
+        { ...timer, startTime: currentTime  } 
+        :
+         { ...timer })),
+    ]);
+  };
+
 
   return (
     <div className="track-zone">
@@ -101,6 +145,9 @@ const Timers = () => {
               removeTimer={removeTimer}
               handleToggle={handleToggle}
               handleStartTime={handleStartTime}
+              handleCurrentTime={handleCurrentTime}
+              handleEndTime={handleEndTime}
+              handleNewStartTime={handleNewStartTime}
             />
           ))}
         </div>
