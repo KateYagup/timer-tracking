@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Timer from '../timer/Timer';
 import './timers.scss';
 import moment from 'moment';
-import { startTransition } from 'react';
 
 const Timers = () => {
   const [timers, setTimers] = useState([]);
@@ -34,7 +33,7 @@ const Timers = () => {
       newTimer = {
         id: Math.random().toString(36).substr(2, 9),
         endTime: 0,
-        timerName: `Timer name ${numberOfTimer}`,
+        timerName: `From ${moment().format('HH:mm')}`,
         startTime: 0,
         pauseTimer: true,
       };
@@ -58,41 +57,30 @@ const Timers = () => {
   const handleEndTime = id => {
     console.log('Выполнилась запись времени handleEndTime');
     setTimers([
-      ...timers.map(timer =>
-        id === timer.id ? { ...timer, 
-           endTime: moment() } : { ...timer },
-      ),
+      ...timers.map(timer => (id === timer.id ? { ...timer, endTime: moment() } : { ...timer })),
     ]);
-  }
+  };
   const handleNewStartTime = id => {
     console.log('Выполняется прибавка прошедшего времени handleNewStartTime ' + id);
     setTimers([
       ...timers.map(timer =>
-         id === timer.id 
-          ? { ...timer, startTime: timer.startTime + moment().diff(moment(timer.endTime, 'seconds')) } 
+        id === timer.id
+          ? {
+              ...timer,
+              startTime: timer.startTime + moment().diff(moment(timer.endTime, 'seconds')),
+            }
           : { ...timer },
-      )
+      ),
     ]);
-    // setTimers([
-    //   ...timers.map(timer =>
-    //     id === timer.id ? { ...timer, startTime: 10 } : { ...timer },
-    //   ),
-    // ]);
   };
 
   const handleToggle = id => {
     setTimers([
       ...timers.map(timer =>
-        id === timer.id 
-        ? { ...timer, 
-          pauseTimer: !timer.pauseTimer, 
-           } 
-           : { ...timer },
+        id === timer.id ? { ...timer, pauseTimer: !timer.pauseTimer } : { ...timer },
       ),
     ]);
   };
-
- 
 
   const handleStartTime = (id, newTime) => {
     setTimers([
@@ -102,56 +90,51 @@ const Timers = () => {
 
   const handleCurrentTime = (id, currentTime, offTime) => {
     setTimers([
-      ...timers.map(timer => (id === timer.id 
-        ? 
-        { ...timer, startTime: currentTime  } 
-        :
-         { ...timer })),
+      ...timers.map(timer =>
+        id === timer.id ? { ...timer, startTime: currentTime } : { ...timer },
+      ),
     ]);
   };
 
-
   return (
     <div className="track-zone">
-      <div className="track-zone__width">
-        <div className="whyUse">
-          <p className="whyUse__header">
-            <span className="whyUse__header-bold">Why</span> do we use it?
-          </p>
-          <p className="whyUse__text">
-            This sounded nonsense to Alice, so she said nothing, but set off at once toward the Red
-            Queen. To her surprise, she lost sight of her in a moment.
-          </p>
-        </div>
-        <div className="createTimers">
-          <input
-            className="inputName"
-            type="text"
-            placeholder="Timer name"
-            value={timerInput}
-            onChange={e => setTimerInput(e.target.value)}
-            onKeyDown={handleKeyPress}
-          />
-          <button className="button button__orange" onClick={createNewTimer}>
-            Create Timer
-          </button>
-        </div>
-        <div className="separateLine"></div>
-        <div className="timers-group">
-          {timers.map(timer => (
-            <Timer
-              key={timer.id}
-              {...timer}
-              removeTimer={removeTimer}
-              handleToggle={handleToggle}
-              handleStartTime={handleStartTime}
-              handleCurrentTime={handleCurrentTime}
-              handleEndTime={handleEndTime}
-              handleNewStartTime={handleNewStartTime}
-            />
-          ))}
-        </div>
+      <div className="whyUse">
+        <p className="whyUse__header">
+          <span className="whyUse__header-bold">Why</span> do we use it?
+        </p>
+        <p className="whyUse__text">
+          This sounded nonsense to Alice, so she said nothing, but set off at once toward the Red
+          Queen. To her surprise, she lost sight of her in a moment.
+        </p>
       </div>
+      <div className="createTimers">
+        <input
+          className="inputName"
+          type="text"
+          placeholder="Timer name"
+          value={timerInput}
+          onChange={e => setTimerInput(e.target.value)}
+          onKeyDown={handleKeyPress}
+        />
+        <button className="button button__orange" onClick={createNewTimer}>
+          Create Timer
+        </button>
+      </div>
+      <div className="separateLine"></div>
+      <ul className="timers-group">
+        {timers.map(timer => (
+          <Timer
+            key={timer.id}
+            {...timer}
+            removeTimer={removeTimer}
+            handleToggle={handleToggle}
+            handleStartTime={handleStartTime}
+            handleCurrentTime={handleCurrentTime}
+            handleEndTime={handleEndTime}
+            handleNewStartTime={handleNewStartTime}
+          />
+        ))}
+      </ul>
     </div>
   );
 };

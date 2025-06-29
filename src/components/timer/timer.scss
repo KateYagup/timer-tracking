@@ -2,42 +2,29 @@
   display: flex;
   justify-content: space-around;
   text-align: center;
-  margin-bottom: 40px;
   width: 500px;
 
-  &__common {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    height: 50px;
-  }
-  &__name {
-    display: inline-block;
-    margin-right: 59px;
-    display: inline-block;
-    width: 400px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
   &__name-text {
-    font-family: NunitoSans;
-    font-weight: 800;
-    font-size: 20px;
-    line-height: 100%;
-    letter-spacing: 0px;
-    color: #5586f2;
     text-align: left;
-    // white-space: nowrap;
+    font-size: 20px;
+    font-weight: 700;
+    color: #5586f2;
+    width: 129px;
+    text-wrap: nowrap;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
   }
 
   &__time {
-    background: #e7e8ea;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 117px;
+    height: 50px;
     border-radius: 6px;
-    border: 1px;
-    margin-right: 42px;
+    color: #676c75;
+    margin: 0 22px 0 39px;
   }
 
   &__active {
@@ -48,24 +35,40 @@
     background: #e7e8ea;
   }
 
-  &__time-text {
-    font-family: NunitoSans;
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 100%;
-    letter-spacing: 0px;
-    color: #676c75;
-  }
-
   &__button {
-    width: 59px;
+    width: 50px;
     height: 50px;
     margin-right: 20px;
     border: none;
     background-color: none;
   }
+}
 
-  &__control {
-    display: flex;
-  }
+.button-control {
+  width: 13.97002124786377;
+  height: 18;
+}
+
+.delete {
+  width: 50px;
+  height: 50px;
+  background-image: url(/public/control_buttons/deleteBack.svg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.control_button {
+  background-color: transparent;
+  border-radius: 50%;
+}
+
+.play_button {
+  border-radius: 50%;
+  background-image: url(/public/control_buttons/playButton.png);
+}
+
+.pause_button {
+  border-radius: 50%;
+  background-image: url(/public/control_buttons/pauseButton.png);
 }

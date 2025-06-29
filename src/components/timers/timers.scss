@@ -1,21 +1,21 @@
 .track-zone {
-  // width: 570px;
   display: flex;
   justify-content: center;
-  // flex-direction: column;
-  // align-items: center;
-  &__width{
-    width: 770px;
-  }
+  align-items: center;
+  min-height: 841px;
+  padding: 122px 113px 113px;
+  flex-direction: column;
+  gap: 18px;
 }
 
-.timers-group{
-display: flex;
-flex-direction: column;
-align-items: center;
+.timers-group {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-right: 24px;
 }
 
-.createTimers{
+.createTimers {
   display: flex;
   justify-content: center;
 }
@@ -48,6 +48,7 @@ align-items: center;
     letter-spacing: 1px;
     text-align: center;
     color: #676c75;
+    margin: 0;
   }
 
   &__header-bold {
@@ -56,11 +57,10 @@ align-items: center;
   }
 
   &__text {
-    font-weight: 400;
+    max-width: 570px;
+    text-align: center;
     font-size: 16px;
     line-height: 30px;
-    letter-spacing: 0px;
-    text-align: center;
     color: #676c75;
   }
 }
