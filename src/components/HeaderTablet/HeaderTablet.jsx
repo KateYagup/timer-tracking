@@ -17,7 +17,7 @@ const HeaderTablet = () => {
       <div className="header">
         <div className="tablet">
           <div className="tablet__logo">
-            <img className="tablet__logo-img" src="/public/A.jpg" alt="" />
+            <img className="tablet__logo-img" src="/public/images/header/A.jpg" alt="" />
           </div>
           <div className="tablet__text">
             <span className="boldText">AppStarter.</span> Best landing page for web and mobile apps
@@ -27,7 +27,7 @@ const HeaderTablet = () => {
             <button className="button button__white">Watch Video</button>
           </div>
         </div>
-        <img className="header__decoration" src="/public/header/Tablet.png" alt="" />
+        <img className="header__decoration" src="/public/images/header/Tablet.png" alt="" />
       </div>
     </div>
   );

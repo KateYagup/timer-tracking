@@ -3,7 +3,7 @@
 ### [Site link](https://yagup-timer-track.netlify.app/)
 
 Devices support
-- [desktop]
+- [mobile/tablet/desktop]
 
 ### The tech stack is:
 

@@ -70,7 +70,7 @@ const Timer = ({
         }}
       ></button>
       <button className="track__button delete" onClick={() => removeTimer(id)}>
-        <img className="button-control" src="/public/control_buttons/deleteIcon.png" alt="" />
+        <img className="button-control" src="/public/images/control_buttons/deleteIcon.png" alt="" />
       </button>
     </li>
   );

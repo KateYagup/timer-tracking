@@ -52,7 +52,7 @@
 .delete {
   width: 50px;
   height: 50px;
-  background-image: url(/public/control_buttons/deleteBack.svg);
+  background-image: url(/public/images/control_buttons/deleteBack.svg);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -65,10 +65,10 @@
 
 .play_button {
   border-radius: 50%;
-  background-image: url(/public/control_buttons/playButton.png);
+  background-image: url(/public/images/control_buttons/playButton.png);
 }
 
 .pause_button {
   border-radius: 50%;
-  background-image: url(/public/control_buttons/pauseButton.png);
+  background-image: url(/public/images/control_buttons/pauseButton.png);
 }
